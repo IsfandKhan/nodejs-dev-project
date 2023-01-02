@@ -1,0 +1,19 @@
+{
+  "name": "nodejs-dev",
+  "version": "1.0.0",
+  "description": "Test task",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "sass --watch public/style.scss public/style.css && rimraf public/style.css && rimraf public/style.css.map"
+  },
+  "author": "isfandkhan",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "sass": "^1.57.1"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2"
+  }
+}
