@@ -1,0 +1,36 @@
+  <div class='left-sidebar'>
+    <div class='d-flex tabs p-4'>
+      <div class='tab'>All</div>
+      <div class='tab active'>Whale</div>
+      <div class='tab'>New</div>
+      <div class='tab'>...</div>
+    </div>
+    <div id="estimates" class='progress-data p-4'></div>
+  </div>
+
+  <script>
+  fetch('/api/estimates')
+    .then((data) => data.json())
+    .then((data) => {
+      const template = `<div class='tab-total'>${data.totalRecords} ${data.category}${data.totalRecords > 1 ? 's' : ''}</div>` + data.estimates.reduce((acc, d) => 
+          acc + `
+            <div class='estimate'>
+              <div class='estimate-title'>${d.title} <span class='float-end'>Ξ${d.points}K</span></div>
+              <div class='progress mt-3'>
+                <div
+                  class='progress-bar'
+                  role='progressbar'
+                  aria-valuenow='${d.percentage}'
+                  aria-valuemin='0'
+                  aria-valuemax='100'
+                  style='width: ${d.percentage}%'
+                >
+                  <span class='sr-only'>${d.percentage}%</span>
+                </div>
+              </div>
+            </div>
+          `
+      , '');
+      $('#estimates').html(template);
+    });
+</script>

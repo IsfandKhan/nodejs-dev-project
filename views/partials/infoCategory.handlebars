@@ -1,0 +1,19 @@
+<div id="info-categories" class='d-flex mt-5'></div>
+
+<script>
+  fetch('/api/report')
+    .then((data) => data.json())
+    .then((data) => {
+      const template = data.reduce((acc, d) => 
+          acc + `
+            <span class="info-category">
+              <span class="py-3 px-3">${d.title}</span>
+              <span style="margin-right: 5px">Ξ${d.points}</span>
+              <img style="margin-right: 5px" src="${d.trend === 'increase' ? '/icons/arrow-up-right.svg' : '/icons/arrow-down-right.svg'}" />
+              ${d.amount ? '<span style="margin-right: 5px">$${d.amount}</span>': ''}
+            </span>
+          `
+      , '');
+      $('#info-categories').html(template);
+    });
+</script>

@@ -1,0 +1,229 @@
+@import '../../node_modules/bootstrap/scss/bootstrap';
+
+$default-font: 'Inter';
+
+$primary: #09090a;
+
+$grey-10: #f2f2f5;
+$grey-40: #79798c;
+$grey-70: #282836;
+$grey-80: #1d1d26;
+$grey-85: #1a1a22;
+$grey-90: #17161c;
+
+$white: #ffffff;
+
+$purple: #9452f7;
+
+$green-50: #3cd660;
+
+$red-50: #be3d2c;
+
+$blue-60: #1fa8d1;
+
+body {
+  font-family: $default-font;
+  background-color: $primary;
+  color: $white;
+  cursor: default !important;
+}
+
+.page-name {
+  font-size: 32px;
+  line-height: 38.73px;
+  font-style: normal;
+}
+
+.navlink {
+  @extend .py-3;
+  @extend .px-3;
+  @extend .text-decoration-none;
+
+  font-size: 16px;
+  color: $white;
+
+  &:hover {
+    border-bottom: 2px $grey-40 solid;
+    color: $white !important;
+  }
+
+  &.active {
+    border-bottom: 2px $purple solid;
+  }
+}
+
+.info-category {
+  background-color: $grey-90;
+  width: 2rem;
+  flex-grow: 1;
+  @extend .py-3;
+
+  &:nth-of-type(even) {
+    background-color: $grey-85;
+    padding: 0;
+  }
+}
+
+.feed {
+  background-color: $grey-90;
+  font-size: 20px;
+  line-height: 24px;
+  color: $grey-10;
+  flex: 2 1 auto;
+  max-height: 628px;
+
+  .scrollable {
+    height: 94%;
+    overflow: scroll;
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .feed-card {
+    background-color: $grey-80;
+
+    &:not(:first-child) {
+      margin-top: 8px;
+    }
+
+    .feed-card-title {
+      width: 20rem;
+      border-right: 1px $grey-90 solid;
+      font-size: 15px;
+      line-height: 18px;
+
+      .button-dropdown {
+        margin-left: auto;
+      }
+
+      .time {
+        color: $grey-40;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 15px;
+      }
+    }
+
+    .feed-card-body {
+      flex-grow: 1;
+
+      .feed-card-body-1 {
+        flex-grow: 1;
+        border-bottom: 1px $grey-90 solid;
+
+        .main-text {
+          font-size: 15px;
+          line-height: 18px;
+        }
+
+        .nfti-range {
+          font-size: 12px;
+          line-height: 15px;
+          margin-left: auto;
+          color: $grey-40;
+        }
+      }
+
+      .feed-card-body-2 {
+        font-size: 12px;
+        line-height: 15px;
+        color: $grey-40;
+
+        .loss {
+          color: $red-50;
+          font-size: 15px;
+          line-height: 18px;
+          margin-left: auto;
+        }
+
+        .profit {
+          color: $green-50;
+          font-size: 15px;
+          line-height: 18px;
+          margin-left: auto;
+        }
+      }
+    }
+  }
+}
+
+.left-sidebar {
+  margin-left: auto;
+  max-height: 640px;
+
+  .tabs {
+    background-color: $grey-80;
+    .tab {
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 15px;
+      color: $grey-40;
+      background-color: $grey-90;
+      border-radius: 31px;
+      padding-block: 10px;
+      padding-inline: 30px;
+
+      &:not(:first-child) {
+        margin-left: 10px;
+      }
+
+      &:hover {
+        color: $white;
+      }
+
+      &.active {
+        background-color: $grey-10;
+        color: $grey-90;
+      }
+    }
+  }
+
+  .progress-data {
+    background-color: $grey-90;
+
+    .tab-total {
+      @extend .fw-bold;
+      font-size: 15px;
+      line-height: 18px;
+      color: $grey-10;
+    }
+
+    .estimate {
+      margin-top: 30px;
+
+      &:nth-child(2) {
+        margin-top: 2.5rem;
+      }
+
+      .estimate-title {
+        @extend .fw-normal;
+        font-size: 15px;
+        line-height: 18px;
+        color: $grey-40;
+
+        span {
+          @extend .fw-bold;
+          font-size: 15px;
+          line-height: 18px;
+          color: $grey-10;
+        }
+      }
+    }
+
+    .progress {
+      box-shadow: none;
+      background-color: $grey-70;
+      height: 3px;
+
+      .progress-bar {
+        background-color: $blue-60;
+      }
+    }
+  }
+}
