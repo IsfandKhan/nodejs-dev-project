@@ -10,7 +10,7 @@
               <span class="py-3 px-3">${d.title}</span>
               <span style="margin-right: 5px">Ξ${d.points}</span>
               <img style="margin-right: 5px" src="${d.trend === 'increase' ? '/icons/arrow-up-right.svg' : '/icons/arrow-down-right.svg'}" />
-              ${d.amount ? '<span style="margin-right: 5px">$${d.amount}</span>': ''}
+              ${d.amount ? `<span style="margin-right: 5px">$${d.amount}</span>`: ''}
             </span>
           `
       , '');
